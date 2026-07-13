@@ -1,6 +1,6 @@
-# Physics Studio
+# Studio Physics
 
-A static website teaching AP Physics concepts from first principles — no memorization, no fluff.
+A static website teaching physics concepts from first principles — no memorization, no fluff.
 
 **Live at [studiophysics.com](https://studiophysics.com)**
 
