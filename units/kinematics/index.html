@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinematics — Studio Physics</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="brand">Studio Physics</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#">Units</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="lesson-main">
+
+    <div class="lesson-header">
+      <span class="lesson-eyebrow">Unit 01 — Mechanics</span>
+      <h1>Kinematics</h1>
+    </div>
+
+    <nav class="lesson-toc">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#position-velocity-acceleration">Position, Velocity, Acceleration</a></li>
+        <li><a href="#kinematic-equations">The Kinematic Equations</a></li>
+        <li><a href="#free-fall">Free Fall</a></li>
+        <li><a href="#projectile-motion">Projectile Motion</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+        <li><a href="#practice">Practice Problems</a></li>
+      </ol>
+    </nav>
+
+    <!-- ============ SECTION 1 ============ -->
+    <section class="concept-block" id="position-velocity-acceleration">
+      <h2>1. Position, Velocity, and Acceleration</h2>
+
+      <p>
+        Kinematics is the description of motion without asking what causes it.
+        Before you can answer "why does it move that way," you have to be able to answer
+        "how is it moving, exactly" — and that means being precise about three quantities:
+        where something is, how fast it's changing position, and how fast that rate of change is itself changing.
+      </p>
+
+      <h3>The setup</h3>
+      <ul class="var-list">
+        <li><code>x</code> position (m) — where the object is along a chosen axis, relative to a chosen origin.</li>
+        <li><code>v</code> velocity (m/s) — the rate of change of position. A vector: direction matters.</li>
+        <li><code>a</code> acceleration (m/s²) — the rate of change of velocity. Also a vector.</li>
+        <li><code>t</code> time (s) — measured from some reference point, usually <code>t = 0</code> at the start of the motion you're analyzing.</li>
+      </ul>
+
+      <p>
+        The most important habit to build here: velocity tells you nothing about speeding up or slowing down,
+        and acceleration tells you nothing about which way the object is currently moving. They are independent
+        pieces of information. An object can have negative velocity and positive acceleration at the same instant
+        (slowing down while moving in the negative direction) — that's not a contradiction, it's just two separate facts.
+      </p>
+
+      <h3>From position to velocity to acceleration</h3>
+      <p>
+        Velocity is the slope of the position-vs-time graph. Acceleration is the slope of the velocity-vs-time graph.
+        This is the calculus underneath kinematics even before you formally take a derivative:
+      </p>
+
+      <div class="equation">v = Δx / Δt &nbsp;&nbsp;(average velocity)<br>a = Δv / Δt &nbsp;&nbsp;(average acceleration)</div>
+
+      <p>
+        When Δt shrinks toward zero, these become instantaneous velocity and instantaneous acceleration —
+        the actual slope of the curve at one specific point in time, not just the average over an interval.
+      </p>
+    </section>
+
+    <!-- ============ SECTION 2 ============ -->
+    <section class="concept-block" id="kinematic-equations">
+      <h2>2. The Kinematic Equations</h2>
+
+      <p>
+        These four equations only apply when acceleration is <strong>constant</strong>. That restriction is
+        the single most-overlooked detail in this unit — if acceleration is changing, none of these are valid,
+        and you need calculus (or a different unit's tools) instead.
+      </p>
+
+      <div class="equation">v = v₀ + at</div>
+      <div class="equation">x = x₀ + v₀t + ½at²</div>
+      <div class="equation">v² = v₀² + 2a(x − x₀)</div>
+      <div class="equation">x = x₀ + ½(v₀ + v)t</div>
+
+      <p>
+        Notice each equation is missing a different variable. That's the actual skill in this section:
+        not memorizing four formulas, but reading a problem, listing what you know and what you want, and
+        picking the equation that doesn't require a variable you don't have.
+      </p>
+
+      <div class="worked-example">
+        <span class="label">Worked Example</span>
+        <p>A car starts at rest and accelerates at 3.0 m/s² for 6.0 seconds. How far does it travel?</p>
+        <ol>
+          <li>List knowns: v₀ = 0 m/s, a = 3.0 m/s², t = 6.0 s. Unknown: Δx.</li>
+          <li>No final velocity given and none asked for — so use the equation that doesn't involve v:
+            x = x₀ + v₀t + ½at².</li>
+          <li>Substitute: x = 0 + (0)(6.0) + ½(3.0)(6.0)².</li>
+          <li>Compute: ½(3.0)(36) = 54.</li>
+          <li>The car travels <strong>54 meters</strong>.</li>
+        </ol>
+      </div>
+
+      <div class="misconception">
+        <span class="label">Misconception</span>
+        <p>
+          "If acceleration is zero, the object isn't moving." False — zero acceleration means constant velocity,
+          which could be a large constant speed in a straight line. Acceleration measures change, not motion itself.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3 ============ -->
+    <section class="concept-block" id="free-fall">
+      <h2>3. Free Fall</h2>
+
+      <p>
+        Free fall is just the kinematic equations with a fixed value for acceleration: gravity near Earth's
+        surface, g = 9.8 m/s², always directed downward, regardless of whether the object is moving up, down,
+        or momentarily at rest at the top of its path.
+      </p>
+
+      <div class="misconception">
+        <span class="label">Misconception</span>
+        <p>
+          "At the top of its path, a thrown ball has zero acceleration." False — velocity is zero there, not
+          acceleration. Gravity never switches off; the ball's acceleration is −9.8 m/s² the entire time it's
+          in the air, including at the peak.
+        </p>
+      </div>
+
+      <div class="worked-example">
+        <span class="label">Worked Example</span>
+        <p>A ball is thrown straight up at 14.7 m/s. How long until it returns to its starting height?</p>
+        <ol>
+          <li>Take up as positive. v₀ = 14.7 m/s, a = −9.8 m/s². It returns to the same height, so Δx = 0.</li>
+          <li>Use x = x₀ + v₀t + ½at² with Δx = 0: 0 = v₀t + ½at².</li>
+          <li>Factor out t: 0 = t(v₀ + ½at). One solution is t = 0 (the start); the other is t = −2v₀/a.</li>
+          <li>t = −2(14.7)/(−9.8) = <strong>3.0 seconds</strong>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4 ============ -->
+    <section class="concept-block" id="projectile-motion">
+      <h2>4. Projectile Motion</h2>
+
+      <p>
+        Projectile motion is two completely independent 1-D kinematics problems happening at the same time:
+        horizontal motion with zero acceleration, and vertical motion with constant acceleration g. They don't
+        affect each other. This independence is the entire concept — once you accept it, projectile motion
+        is just two copies of what you already did in sections 1–3.
+      </p>
+
+      <h3>The setup</h3>
+      <ul class="var-list">
+        <li><code>vₓ</code> horizontal velocity — constant throughout the flight (no horizontal acceleration, ignoring air resistance).</li>
+        <li><code>v_y</code> vertical velocity — changes at rate g, exactly like free fall.</li>
+        <li><code>v₀</code>, <code>θ</code> launch speed and angle — split into components with vₓ = v₀cos θ and v_y = v₀sin θ.</li>
+      </ul>
+
+      <div class="equation">x = vₓ · t</div>
+      <div class="equation">y = y₀ + v_y₀t − ½gt²</div>
+
+      <div class="misconception">
+        <span class="label">Misconception</span>
+        <p>
+          "A heavier projectile falls faster and lands sooner." False, ignoring air resistance — mass cancels
+          out of every kinematic equation here. A bowling ball and a tennis ball launched identically land at
+          the same time. What actually changes the time of flight is launch angle and speed, never mass.
+        </p>
+      </div>
+
+      <div class="worked-example">
+        <span class="label">Worked Example</span>
+        <p>A ball is launched at 20 m/s at 30° above horizontal from ground level. How far away does it land?</p>
+        <ol>
+          <li>Components: vₓ = 20cos30° ≈ 17.3 m/s, v_y₀ = 20sin30° = 10 m/s.</li>
+          <li>Time of flight (returns to y = 0): using the free-fall result pattern, t = 2v_y₀/g = 2(10)/9.8 ≈ 2.04 s.</li>
+          <li>Range: x = vₓ · t = 17.3 × 2.04 ≈ <strong>35.3 meters</strong>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5 — SIMULATOR ============ -->
+    <section class="concept-block" id="simulator">
+      <h2>5. Simulator</h2>
+      <p>
+        Predict before you check: pick a launch angle and speed, predict the range, then run it.
+      </p>
+      <iframe src="https://wafisharif.github.io/projectile-motion-simulator/" width="100%" height="600" style="border:none; border-radius:10px;"></iframe>
+    </section>
+
+    <!-- ============ SECTION 6 — PRACTICE ============ -->
+    <section class="concept-block" id="practice">
+      <h2>6. Practice Problems</h2>
+
+      <div class="practice-problem">
+        <p><strong>1.</strong> A car traveling at 20 m/s brakes to a stop over a distance of 50 m. Find its acceleration.</p>
+        <button class="reveal-btn" data-target="ans1">Show Answer</button>
+        <div class="answer" id="ans1">
+          v² = v₀² + 2aΔx → 0 = 400 + 2a(50) → a = −4 m/s². The car decelerates at 4 m/s².
+        </div>
+      </div>
+
+      <div class="practice-problem">
+        <p><strong>2.</strong> A stone is dropped from a 45 m cliff. How long does it take to hit the ground?</p>
+        <button class="reveal-btn" data-target="ans2">Show Answer</button>
+        <div class="answer" id="ans2">
+          Δy = ½gt² → 45 = ½(9.8)t² → t² ≈ 9.18 → t ≈ 3.03 s.
+        </div>
+      </div>
+
+      <div class="practice-problem">
+        <p><strong>3.</strong> A projectile is launched horizontally at 15 m/s from a 20 m high platform. How far from the base of the platform does it land?</p>
+        <button class="reveal-btn" data-target="ans3">Show Answer</button>
+        <div class="answer" id="ans3">
+          Vertical: 20 = ½(9.8)t² → t ≈ 2.02 s. Horizontal: x = 15 × 2.02 ≈ 30.3 m.
+        </div>
+      </div>
+    </section>
+
+    <div class="lesson-pager">
+      <span></span>
+      <a href="../dynamics/">Next: Dynamics →</a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Studio Physics — built one concept at a time.</p>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

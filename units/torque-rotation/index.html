@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torque & Rotation — Studio Physics</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../index.html" class="brand">Studio Physics</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html#">Units</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="lesson-main">
+
+    <div class="lesson-header">
+      <span class="lesson-eyebrow">Unit 06 — Rotation & Oscillation</span>
+      <h1>Torque &amp; Rotation</h1>
+    </div>
+
+    <p class="stub-notice">This page covers the core ideas now; worked examples and practice problems will keep expanding.</p>
+
+    <nav class="lesson-toc">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#torque">Torque</a></li>
+        <li><a href="#moment-of-inertia">Moment of Inertia</a></li>
+        <li><a href="#angular-momentum">Angular Momentum</a></li>
+        <li><a href="#practice">Practice Problems</a></li>
+      </ol>
+    </nav>
+
+    <section class="concept-block" id="torque">
+      <h2>1. Torque</h2>
+      <p>
+        Torque is the rotational equivalent of force — it's what causes angular acceleration, the same way
+        force causes linear acceleration. Force alone isn't enough to predict rotation; where the force is
+        applied matters just as much as how big it is.
+      </p>
+      <ul class="var-list">
+        <li><code>r</code> distance from the pivot/axis to where the force is applied (m).</li>
+        <li><code>F</code> applied force (N).</li>
+        <li><code>θ</code> angle between the force vector and the lever arm.</li>
+      </ul>
+      <div class="equation">τ = rF sin θ</div>
+
+      <div class="misconception">
+        <span class="label">Misconception</span>
+        <p>
+          "A bigger force always produces more torque." False if it's applied closer to the axis, or at a
+          shallow angle — a small force applied far from the pivot, perpendicular to the lever arm, can
+          produce more torque than a large force applied right next to the axis.
+        </p>
+      </div>
+    </section>
+
+    <section class="concept-block" id="moment-of-inertia">
+      <h2>2. Moment of Inertia</h2>
+      <p>
+        Moment of inertia, I, is rotational mass — an object's resistance to angular acceleration. Unlike
+        ordinary mass, it depends not just on how much mass an object has but on how that mass is distributed
+        relative to the axis of rotation. The same mass spread farther from the axis means a larger I.
+      </p>
+      <div class="equation">τ = Iα</div>
+      <p>This is the rotational version of F = ma.</p>
+    </section>
+
+    <section class="concept-block" id="angular-momentum">
+      <h2>3. Angular Momentum</h2>
+      <div class="equation">L = Iω</div>
+      <p>
+        Angular momentum is conserved in a system with no external torque — this is why a spinning skater
+        speeds up when pulling their arms in: I decreases, so ω must increase to keep L constant.
+      </p>
+    </section>
+
+    <section class="concept-block" id="practice">
+      <h2>4. Practice Problems</h2>
+      <div class="practice-problem">
+        <p><strong>1.</strong> A 10 N force is applied perpendicular to a wrench, 0.25 m from a bolt. Find the torque.</p>
+        <button class="reveal-btn" data-target="ans1">Show Answer</button>
+        <div class="answer" id="ans1">
+          τ = rF sin90° = 0.25 × 10 × 1 = 2.5 N·m.
+        </div>
+      </div>
+    </section>
+
+    <div class="lesson-pager">
+      <a href="../momentum/">← Previous: Momentum</a>
+      <a href="../shm/">Next: Simple Harmonic Motion →</a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Studio Physics — built one concept at a time.</p>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
