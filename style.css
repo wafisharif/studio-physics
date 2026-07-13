@@ -1,0 +1,438 @@
+/* ============================================
+   PHYSICS STUDIO — SHARED STYLES
+   ============================================ */
+
+:root {
+  --bg: #14130f;
+  --bg-elevated: #1b1a15;
+  --bg-card: #201f1a;
+  --border: #2e2c25;
+  --text: #e8e4da;
+  --text-dim: #a3a08f;
+  --accent: #9caf88;       /* sage green */
+  --accent-soft: #29331f;
+  --accent-warn: #d8a978;  /* misconceptions */
+  --accent-warn-soft: #332a1c;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+/* ---------- Header / Nav ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 13, 18, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.brand:hover { text-decoration: none; color: var(--accent); }
+
+.main-nav a {
+  color: var(--text-dim);
+  margin-left: 22px;
+  font-size: 0.95rem;
+}
+.main-nav a:hover { color: var(--accent); text-decoration: none; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px 16px;
+  }
+  .main-nav.open { display: flex; }
+  .main-nav a { margin: 8px 0; }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  max-width: var(--max-width);
+  margin: 64px auto 40px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero-sub {
+  color: var(--text-dim);
+  font-size: 1.08rem;
+  max-width: 560px;
+  margin: 14px auto 0;
+}
+
+/* ---------- Unit grid (homepage) ---------- */
+
+.unit-grid-section {
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+}
+
+.section-label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  margin: 40px 0 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.unit-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 18px;
+  color: var(--text);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.unit-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.unit-number {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.unit-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.unit-desc {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  flex-grow: 1;
+}
+
+.unit-tag {
+  align-self: flex-start;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.sim-tag {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- Lesson page layout ---------- */
+
+.lesson-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 100px;
+}
+
+.lesson-header {
+  margin-bottom: 36px;
+}
+
+.lesson-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.lesson-header h1 {
+  font-size: 2.1rem;
+  margin: 8px 0 0;
+}
+
+.lesson-toc {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 40px;
+}
+
+.lesson-toc p {
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.lesson-toc ol {
+  margin: 0;
+  padding-left: 20px;
+  columns: 2;
+  font-size: 0.94rem;
+}
+
+.lesson-toc a { color: var(--text); }
+.lesson-toc a:hover { color: var(--accent); }
+
+.concept-block {
+  margin-bottom: 56px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.concept-block h2 {
+  font-size: 1.55rem;
+  margin-bottom: 18px;
+}
+
+.concept-block h3 {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin: 28px 0 10px;
+}
+
+.concept-block p { margin: 0 0 14px; }
+
+/* Definition / variable list */
+
+.var-list {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  list-style: none;
+}
+
+.var-list li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.var-list code {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* Equations */
+
+.equation {
+  background: var(--bg-elevated);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin: 18px 0;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  overflow-x: auto;
+}
+
+/* Worked example */
+
+.worked-example {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin: 18px 0;
+}
+
+.worked-example .label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.worked-example ol {
+  padding-left: 20px;
+}
+
+.worked-example li { margin-bottom: 10px; }
+
+/* Misconceptions */
+
+.misconception {
+  background: var(--accent-warn-soft);
+  border: 1px solid #5a4a26;
+  border-left: 3px solid var(--accent-warn);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+
+.misconception .label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-warn);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Simulator embed placeholder */
+
+.sim-embed {
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-dim);
+  margin: 18px 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Practice problems */
+
+.practice-problem {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  background: var(--bg-card);
+}
+
+.practice-problem p { margin: 0 0 10px; }
+
+.reveal-btn {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.reveal-btn:hover { background: var(--accent); color: #0b0d12; }
+
+.answer {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+.answer.shown { display: block; }
+
+/* Lesson nav (prev/next) */
+
+.lesson-pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+
+.site-footer {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  padding: 30px 24px 50px;
+  font-family: var(--font-mono);
+}
+
+/* Stub notice for lighter-content pages */
+
+.stub-notice {
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin-bottom: 30px;
+}

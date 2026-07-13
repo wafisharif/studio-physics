@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Physics Studio</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="units/kinematics.html">Units</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Understand physics. Don't memorize it.</h1>
+      <p class="hero-sub">
+        Every concept explained from first principles, with worked examples,
+        common misconceptions called out by name, and interactive simulators
+        you can play around with.
+      </p>
+    </section>
+
+    <section class="unit-grid-section">
+      <h2 class="section-label">Mechanics</h2>
+      <div class="unit-grid">
+
+        <a class="unit-card" href="units/kinematics.html">
+          <span class="unit-number">01</span>
+          <span class="unit-title">Kinematics</span>
+          <span class="unit-desc">Position, velocity, acceleration, free fall, projectile motion.</span>
+          <span class="unit-tag sim-tag">Simulator</span>
+        </a>
+
+        <a class="unit-card" href="units/dynamics.html">
+          <span class="unit-number">02</span>
+          <span class="unit-title">Dynamics</span>
+          <span class="unit-desc">Newton's laws, friction, free-body diagrams, systems of forces.</span>
+          <span class="unit-tag sim-tag">Simulator</span>
+        </a>
+
+        <a class="unit-card" href="units/circular-motion.html">
+          <span class="unit-number">03</span>
+          <span class="unit-title">Circular Motion &amp; Gravitation</span>
+          <span class="unit-desc">Centripetal force, orbits, Newton's law of gravitation.</span>
+          <span class="unit-tag sim-tag">Simulator</span>
+        </a>
+
+      </div>
+
+      <h2 class="section-label">Energy &amp; Momentum</h2>
+      <div class="unit-grid">
+
+        <a class="unit-card" href="units/energy.html">
+          <span class="unit-number">04</span>
+          <span class="unit-title">Energy</span>
+          <span class="unit-desc">Work, kinetic and potential energy, conservation, power.</span>
+          <span class="unit-tag sim-tag">Simulator</span>
+        </a>
+
+        <a class="unit-card" href="units/momentum.html">
+          <span class="unit-number">05</span>
+          <span class="unit-title">Momentum</span>
+          <span class="unit-desc">Impulse, collisions, conservation of momentum.</span>
+          <span class="unit-tag sim-tag">Simulator</span>
+        </a>
+
+      </div>
+
+      <h2 class="section-label">Rotation &amp; Oscillation</h2>
+      <div class="unit-grid">
+
+        <a class="unit-card" href="units/torque-rotation.html">
+          <span class="unit-number">06</span>
+          <span class="unit-title">Torque &amp; Rotation</span>
+          <span class="unit-desc">Torque, moment of inertia, angular momentum, rotational dynamics.</span>
+        </a>
+
+        <a class="unit-card" href="units/shm.html">
+          <span class="unit-number">07</span>
+          <span class="unit-title">Simple Harmonic Motion</span>
+          <span class="unit-desc">Springs, pendulums, oscillation, energy in SHM.</span>
+          <span class="unit-tag sim-tag">Simulator</span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Physics Studio — built one concept at a time.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

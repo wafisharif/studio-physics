@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Momentum — Physics Studio</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="brand">Physics Studio</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#">Units</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="lesson-main">
+
+    <div class="lesson-header">
+      <span class="lesson-eyebrow">Unit 05 — Energy & Momentum</span>
+      <h1>Momentum</h1>
+    </div>
+
+    <p class="stub-notice">This page covers the core ideas now; worked examples and practice problems will keep expanding.</p>
+
+    <nav class="lesson-toc">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#momentum-impulse">Momentum & Impulse</a></li>
+        <li><a href="#conservation">Conservation of Momentum</a></li>
+        <li><a href="#collisions">Collisions</a></li>
+        <li><a href="#simulator">Simulator</a></li>
+        <li><a href="#practice">Practice Problems</a></li>
+      </ol>
+    </nav>
+
+    <section class="concept-block" id="momentum-impulse">
+      <h2>1. Momentum &amp; Impulse</h2>
+      <ul class="var-list">
+        <li><code>p</code> momentum (kg·m/s) — a vector, mass times velocity.</li>
+        <li><code>J</code> impulse (N·s) — the change in momentum, caused by a force acting over time.</li>
+      </ul>
+      <div class="equation">p = mv</div>
+      <div class="equation">J = FΔt = Δp</div>
+      <p>
+        Impulse is why a longer collision time (an airbag, bending your knees on landing) reduces the force
+        you feel — the same Δp is achieved with a smaller force when Δt is larger.
+      </p>
+    </section>
+
+    <section class="concept-block" id="conservation">
+      <h2>2. Conservation of Momentum</h2>
+      <p>
+        In any system free of external forces (or where external forces are negligible during a short collision),
+        total momentum before equals total momentum after.
+      </p>
+      <div class="equation">m₁v₁ᵢ + m₂v₂ᵢ = m₁v₁f + m₂v₂f</div>
+
+      <div class="misconception">
+        <span class="label">Misconception</span>
+        <p>
+          "Momentum and kinetic energy are conserved in every collision." False — momentum is conserved in
+          all collisions (given no external forces), but kinetic energy is only conserved in elastic
+          collisions. Most real-world collisions are inelastic: momentum is conserved, KE is not.
+        </p>
+      </div>
+    </section>
+
+    <section class="concept-block" id="collisions">
+      <h2>3. Collisions</h2>
+      <p>
+        <strong>Elastic:</strong> objects bounce apart, kinetic energy is conserved.<br>
+        <strong>Perfectly inelastic:</strong> objects stick together and move as one mass afterward,
+        kinetic energy is not conserved, momentum still is.
+      </p>
+      <div class="equation">m₁v₁ᵢ + m₂v₂ᵢ = (m₁ + m₂)v_f &nbsp;&nbsp;(perfectly inelastic)</div>
+    </section>
+
+    <section class="concept-block" id="simulator">
+      <h2>4. Simulator</h2>
+      <iframe src="https://wafisharif.github.io/momentum-and-collision-simulator/" width="100%" height="600" style="border:none; border-radius:10px;"></iframe>
+    </section>
+
+    <section class="concept-block" id="practice">
+      <h2>5. Practice Problems</h2>
+      <div class="practice-problem">
+        <p><strong>1.</strong> A 3 kg cart moving at 4 m/s collides and sticks to a stationary 1 kg cart. Find the final velocity.</p>
+        <button class="reveal-btn" data-target="ans1">Show Answer</button>
+        <div class="answer" id="ans1">
+          (3)(4) + (1)(0) = (4)v_f → v_f = 3 m/s.
+        </div>
+      </div>
+    </section>
+
+    <div class="lesson-pager">
+      <a href="energy.html">← Previous: Energy</a>
+      <a href="torque-rotation.html">Next: Torque & Rotation →</a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Physics Studio — built one concept at a time.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
